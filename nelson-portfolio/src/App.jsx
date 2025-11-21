@@ -153,7 +153,7 @@ export default function Portfolio() {
             <a href="https://github.com/chingaipe29" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors shadow-md">
               <Github size={20} /> GitHub
             </a>
-            <a href="https://linkedin.com/in/nelson-chingaipe" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors shadow-md">
+            <a href="https://www.linkedin.com/in/nelson-chingaipe-95a940324/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors shadow-md">
               <Linkedin size={20} /> LinkedIn
             </a>
           </div>
