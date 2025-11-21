@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Phone, ChevronDown, Code, Briefcase, Award, GraduationCap, Menu, X, User } from 'lucide-react';
-
+import nelsonPhoto from './assets/nelson.jpeg';  // Add this line
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState('');
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -21,17 +19,6 @@ export default function Portfolio() {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(id);
       setIsMenuOpen(false);
-    }
-  };
-
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setPhotoUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
     }
   };
 
@@ -139,37 +126,11 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Photo Upload Section */}
+          {/* Profile Photo */}
           <div className="mb-8 flex flex-col items-center">
-            <div className="relative group">
-              {photoUrl ? (
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#EB9314] shadow-xl">
-                  <img src={photoUrl} alt="Nelson Chingaipe" className="w-full h-full object-cover" />
-                </div>
-              ) : (
-                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-[#EB9314] to-[#FFA500] flex items-center justify-center border-4 border-[#EB9314] shadow-xl">
-                  <User size={80} className="text-white" />
-                </div>
-              )}
-              
-              <label 
-                htmlFor="photo-upload" 
-                className="absolute bottom-2 right-2 bg-[#EB9314] hover:bg-[#D68311] text-white p-3 rounded-full cursor-pointer shadow-lg transition-all group-hover:scale-110"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                  <circle cx="12" cy="13" r="4"></circle>
-                </svg>
-              </label>
-              <input 
-                id="photo-upload" 
-                type="file" 
-                accept="image/*" 
-                onChange={handlePhotoUpload}
-                className="hidden"
-              />
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#EB9314] shadow-xl">
+              <img src={nelsonPhoto} alt="Nelson Chingaipe" className="w-full h-full object-cover" />
             </div>
-            <p className="text-sm text-gray-500 mt-3">Click camera icon to upload photo</p>
           </div>
 
           <div className="mb-8 animate-fade-in">
